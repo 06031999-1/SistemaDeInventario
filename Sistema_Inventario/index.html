@@ -1,0 +1,91 @@
+<!-- ============================================
+  Actividad 5.1 - Sistema de Inventario Dinámico
+  ============================================ -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema de Inventario Dinámico</title>
+  <script defer src="inventario.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      margin: 30px;
+    }
+    h1 { text-align: center; }
+    form {
+      background: #fff;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 0 5px #ccc;
+      margin-bottom: 20px;
+    }
+    label { display: block; margin-top: 10px; }
+    input { width: 100%; padding: 8px; margin-top: 5px; }
+    button {
+      margin-top: 10px;
+      padding: 8px 15px;
+      cursor: pointer;
+      border: none;
+      background: #0078d7;
+      color: white;
+      border-radius: 5px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: center;
+    }
+    th { background: #0078d7; color: white; }
+    #mensaje {
+      margin-top: 15px;
+      font-weight: bold;
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>📦 Sistema de Inventario Dinámico</h1>
+
+  <form id="formProducto">
+    <label>ID del Producto:</label>
+    <input type="text" id="idProducto" required>
+
+    <label>Nombre del Producto:</label>
+    <input type="text" id="nombre" required>
+
+    <label>Cantidad:</label>
+    <input type="number" id="cantidad" required>
+
+    <label>Precio:</label>
+    <input type="number" id="precio" required>
+
+    <button type="button" onclick="insertarProducto()">Insertar</button>
+    <button type="button" onclick="actualizarProducto()">Actualizar</button>
+    <button type="button" onclick="buscarProducto()">Buscar</button>
+  </form>
+
+  <p id="mensaje"></p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Cantidad</th>
+        <th>Precio</th>
+      </tr>
+    </thead>
+    <tbody id="tablaInventario"></tbody>
+  </table>
+
+</body>
+</html>
